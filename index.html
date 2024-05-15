@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{text-align: center;}
+        form{background-color: rgb(192, 192, 192);
+        margin-left: 300px;
+        margin-right: 300px;
+        padding-top: 40px;
+        padding-bottom: 40px;}
+        label{margin-right: 70px;
+        margin-left: -20%;
+        color: blue;}
+        hr{margin-left: 30px;
+        margin-right: 30px;}
+        #ido{padding-top: 20px;
+            padding-bottom: 20px;}
+        
+    </style>
+</head>
+<body>
+    <h1>Panzió szobafoglalás</h1>
+    
+    <form action="./index.html">
+            <hr>
+            <div id="ido">
+            <label for="erkezes">Érkezés dátuma:</label>
+            <input type="date" name="erkezes" id="erkezes" style="color: red;">
+            <br>
+            <label for="tavozas">Távozás dátuma:</label>
+            <input type="date" name="tavozas" id="tavozas"style="color: red;">
+            </div>
+            <hr>
+
+    </form>
+
+
+    <script src="./panzio.js"></script>
+</body>
+</html>
