@@ -7,10 +7,12 @@
     <style>
         body{text-align: center;}
         form{background-color: rgb(192, 192, 192);
-        margin-left: 300px;
-        margin-right: 300px;
+        margin-left: 30%;
+        margin-right: 30%;
         padding-top: 40px;
-        padding-bottom: 40px;}
+        padding-bottom: 40px;
+    min-width: 600px;
+        height: 500px;}
         label{margin-right: 70px;
         margin-left: -20%;
         color: blue;}
@@ -18,6 +20,13 @@
         margin-right: 30px;}
         #ido{padding-top: 20px;
             padding-bottom: 20px;}
+        #szobatipusjobb{float: right;
+        margin-right: 20%;}
+        #r1{margin-right: -25vh;}
+        #r2{margin-right: -25vh;}
+        #r3{margin-right: -25vh;}
+        #r4{margin-right: -25vh;}
+        
         
     </style>
 </head>
@@ -34,7 +43,22 @@
             <input type="date" name="tavozas" id="tavozas"style="color: red;">
             </div>
             <hr>
-
+            <div id="szobatipusbal">
+                <label for="">Szoba Típusa:</label>
+            </div>
+            <div id="szobatipusjobb">
+                <input type="radio" name="r1" id="r1">
+                <label for="r1">Egyágyas: 9000Ft/éj</label>
+                <br>
+                <input type="radio" name="r2" id="r2">
+                <label for="r1">Egyágyas: 9000Ft/éj</label>
+                <br>
+                <input type="radio" name="r3" id="r3">
+                <label for="r1">Egyágyas: 9000Ft/éj</label>
+                <br>
+                <input type="radio" name="r4" id="r4">
+                <label for="r1">Egyágyas: 9000Ft/éj</label>
+            </div>
     </form>
 
 
