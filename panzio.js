@@ -5,7 +5,6 @@ let eletkor2;
 let eletkor3;
 let eletkor4;
 let furdo=0;
-let f1=0;
 function szoba1()
 {
     szobatipus=9000;
@@ -70,17 +69,25 @@ function elerheto()
  }
 
 function ellenorzes()
-{  
-    let erkdatum=new Date(document.getElementById("erkezes").value);
-    let tavdatum=new Date(document.getElementById("tavozas").value);
-    let eltoltottido=(((+tavdatum)-(+erkdatum))/3600000)/24;
-    let vendegszam=Number(document.getElementById("vszam").value);
-    eletkor1=Number(document.getElementById("elet1").value);
-    eletkor2=Number(document.getElementById("elet2").value);
-    eletkor3=Number(document.getElementById("elet3").value);
-    eletkor4=Number(document.getElementById("elet4").value);
-    keres=document.getElementById("keres").value;
-    alert(furdo)
+{
+
+
+            let erkdatum=new Date(document.getElementById("erkezes").value);
+            let tavdatum=new Date(document.getElementById("tavozas").value);
+            let eltoltottido=(((+tavdatum)-(+erkdatum))/3600000)/24;
+            let vendegszam=Number(document.getElementById("vszam").value);
+            eletkor1=Number(document.getElementById("elet1").value);
+            eletkor2=Number(document.getElementById("elet2").value);
+            eletkor3=Number(document.getElementById("elet3").value);
+            eletkor4=Number(document.getElementById("elet4").value);
+            keres=document.getElementById("keres").value;
+            if(erkdatum.value==undefined || tavdatum.value==undefined)
+                {
+                    alert("")
+                }
+            
+    
+
 
 
 }
