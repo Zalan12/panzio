@@ -28,12 +28,10 @@
             width: 400px;
             display: flex;
             flex-direction: column;}
-        #r1{float: left;}
-        #r2{float: left;}
-        #r3{float: left;}
+        .radiogomb{float: left;}
         .rlabel{float: left;}
         .kozep{display: flex;
-            height: 50px;
+            height: 60px;
                 justify-content: center;
                 align-items: center;}
         #elet1{float: left;}
@@ -41,6 +39,11 @@
         #elet3{float: left;}
         #elet4{float: left;}
         .eletlbl{float: left;}
+        .cboxok{float: left;}
+        @media only screen and (max-width: 1000px) {
+            .container{margin-left: 10%;
+                        margin-right: 10%;}
+          }
     </style>
 </head>
 <body>
@@ -71,16 +74,20 @@
     </div>
     <div class="jobb">
         <div class="r">
-            <input type="radio" name="r1" id="r1">
+            <input type="radio" name="r1" id="r1" class="radiogomb" onclick="szoba1()">
             <label for="r1" class="rlabel">Egyágyas - 9000Ft/éj</label>
         </div>
         <div class="r">
-            <input type="radio" name="r1" id="r2">
+            <input type="radio" name="r1" id="r2" class="radiogomb"onclick="szoba2()">
             <label for="r2 " class="rlabel">Kétágyas - 15000Ft/éj</label>
         </div>
         <div class="r">
-            <input type="radio" name="r1" id="r3">
+            <input type="radio" name="r1" id="r3" class="radiogomb"onclick="szoba3()">
             <label for="r3 " class="rlabel">Kétágyas 1 pótággyal - 18000Ft/éj</label>
+        </div>
+        <div class="r">
+            <input type="radio" name="r1" id="r4" class="radiogomb"onclick="szoba4()">
+            <label for="r4 " class="rlabel">Kétágyas 2 pótággyal - 21000Ft/éj</label>
         </div>
     </div>
 </div>
@@ -93,23 +100,89 @@
         <label for="">Vendégek életkora:</label>
     </div>
     <div class="jobb">
-        <input type="number" name="" id="" max="4" min="1" required style="width: 100px;">
+        <input type="number" name="vszam" id="vszam" max="4" min="1" style="width: 100px;" onchange="elerheto()">
         <br>
         <div class="eletkorok">
-            <input type="number" name="elet1" id="elet1" style="width: 35px;"min="0">
+            <input type="number" name="elet1" id="elet1" style="width: 35px;"min="0" disabled>
             <label for="elet1" class="eletlbl">év</label>
-            <input type="number" name="elet2" id="elet2" style="width: 35px;"min="0">
+            <input type="number" name="elet2" id="elet2" style="width: 35px;"min="0" disabled>
             <label for="elet2" class="eletlbl">év</label>
-            <input type="number" name="elet3" id="elet3" style="width: 35px;"min="0">
+            <input type="number" name="elet3" id="elet3" style="width: 35px;"min="0" disabled>
             <label for="elet3" class="eletlbl">év</label>
-            <input type="number" name="elet4" id="elet4" style="width: 35px;"min="0">
+            <input type="number" name="elet4" id="elet4" style="width: 35px;"min="0" disabled>
             <label for="elet4" class="eletlbl">év</label>
         </div>
     </div>
 </div>
 <hr>
-    
+<div class="content">
+        
+    <div class="bal">
+        <div class="kozep">
+            <label for="">Ellátás:</label>
+        </div>
+        
+    </div>
+    <div class="jobb">
+        <div class="r">
+            <input type="radio" name="r2" id="r5" class="radiogomb" onclick="ellatas1()">
+            <label for="r1" class="rlabel">Reggeli-900Ft/nap/fő </label>
+        </div>
+        <div class="r">
+            <input type="radio" name="r2" id="r6" class="radiogomb" onclick="ellatas2()">
+            <label for="r2 " class="rlabel">Félpanzió-2900Ft/nap/fő </label>
+        </div>
+        <div class="r">
+            <input type="radio" name="r2" id="r7" class="radiogomb" onclick="ellatas3()">
+            <label for="r3 " class="rlabel">Teljes panzió-4900Ft/nap/fő </label>
+        </div>
+    </div>
 </div>
+<hr>
+<div class="content">
+        
+    <div class="bal">
+        <div class="kozep">
+            <label for="">Fürdő szolgáltatások:</label>
+        </div>
+        
+    </div>
+    <div class="jobb">
+        <div class="cbox">
+            <input type="checkbox" name="cbox" id="cbox1" class="cboxok">
+            <label for="cbox1" class="rlabel">Beltéri medencék-800Ft/nap/fő </label>
+        </div>
+        <div class="cbox">
+            <input type="checkbox" name="cbox" id="cbox2" class="cboxok" >
+            <label for="cbox2" class="rlabel">Kültéri medencék-800Ft/nap/fő </label>
+        </div>
+        <div class="cbox">
+            <input type="checkbox" name="cbox" id="cbox3" class="cboxok" >
+            <label for="cbox3" class="rlabel">Szauna belépő-800Ft/nap/fő </label>
+        </div>
+        <div class="cbox">
+            <input type="checkbox" name="cbox" id="cbox4" class="cboxok">
+            <label for="cbox4" class="rlabel">Teljes belépő-2000Ft/nap/fő </label>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="content">
+        
+    <div class="bal">
+        <div class="kozep">
+            <label for="">Egyéb kérés, kívánság:</label>
+        </div>
+        
+    </div>
+    <div class="jobb">
+        <textarea name="keres" id="keres" style="height: 50px; width:30vh"></textarea>
+    </div>
 
+</div>
+<hr style="padding-bottom: 10px;">
+</div>
+<button onclick="ellenorzes()">Költségkalkuláció</button>
+<script src="./panzio.js"></script>
 </body>
 </html>
