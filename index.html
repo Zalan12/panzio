@@ -3,65 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panzió</title>
     <style>
         body{text-align: center;}
-        form{background-color: rgb(192, 192, 192);
-        margin-left: 30%;
-        margin-right: 30%;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    min-width: 600px;
-        height: 500px;}
-        label{margin-right: 70px;
-        margin-left: -20%;
-        color: blue;}
-        hr{margin-left: 30px;
-        margin-right: 30px;}
-        #ido{padding-top: 20px;
-            padding-bottom: 20px;}
-        #szobatipusjobb{float: right;
-        margin-right: 20%;}
-        #r1{margin-right: -25vh;}
-        #r2{margin-right: -25vh;}
-        #r3{margin-right: -25vh;}
-        #r4{margin-right: -25vh;}
-        
-        
+        h1{color: blue;}
+        .content{
+        display: flex;
+        flex-direction: row;
+        }
+        .container{background-color: #e3e3e3;
+            margin-left: 20%;
+            margin-right: 20%;
+            padding-top: 8px;}
+        label{color: blue;}
+        hr{margin-left: 18%;
+            margin-right: 18%;}
+        .jobb{
+            display: flex;
+            flex-direction: column;
+        width: 400px;
+    justify-items: start;
+    justify-content: start;}
+        .bal{margin-left: 50px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;}
+        #r1{float: left;}
+        #r2{float: left;}
+        #r3{float: left;}
+        .rlabel{float: left;}
+        .kozep{display: flex;
+            height: 50px;
+                justify-content: center;
+                align-items: center;}
+        #elet1{float: left;}
+        #elet2{float: left;}
+        #elet3{float: left;}
+        #elet4{float: left;}
+        .eletlbl{float: left;}
     </style>
 </head>
 <body>
-    <h1>Panzió szobafoglalás</h1>
-    
-    <form action="./index.html">
-            <hr>
-            <div id="ido">
+    <h1>Panzió-szobafoglalás</h1>
+<div class="container">
+    <hr>
+<div class="content">
+        
+        <div class="bal">
             <label for="erkezes">Érkezés dátuma:</label>
-            <input type="date" name="erkezes" id="erkezes" style="color: red;">
             <br>
             <label for="tavozas">Távozás dátuma:</label>
-            <input type="date" name="tavozas" id="tavozas"style="color: red;">
-            </div>
-            <hr>
-            <div id="szobatipusbal">
-                <label for="">Szoba Típusa:</label>
-            </div>
-            <div id="szobatipusjobb">
-                <input type="radio" name="r1" id="r1">
-                <label for="r1">Egyágyas: 9000Ft/éj</label>
-                <br>
-                <input type="radio" name="r2" id="r2">
-                <label for="r1">Egyágyas: 9000Ft/éj</label>
-                <br>
-                <input type="radio" name="r3" id="r3">
-                <label for="r1">Egyágyas: 9000Ft/éj</label>
-                <br>
-                <input type="radio" name="r4" id="r4">
-                <label for="r1">Egyágyas: 9000Ft/éj</label>
-            </div>
-    </form>
+        </div>
+        <div class="jobb">
+            <input type="date" name="erkezes" id="erkezes" style="color: red; max-width:200px">
+            <br>
+            <input type="date" name="tavozas" id="tavozas" style="color: red;max-width:200px">
+        </div>
+</div>
+<hr>
+<div class="content">
+        
+    <div class="bal">
+        <div class="kozep">
+            <label for="">Szoba típusa:</label>
+        </div>
+        
+    </div>
+    <div class="jobb">
+        <div class="r">
+            <input type="radio" name="r1" id="r1">
+            <label for="r1" class="rlabel">Egyágyas - 9000Ft/éj</label>
+        </div>
+        <div class="r">
+            <input type="radio" name="r1" id="r2">
+            <label for="r2 " class="rlabel">Kétágyas - 15000Ft/éj</label>
+        </div>
+        <div class="r">
+            <input type="radio" name="r1" id="r3">
+            <label for="r3 " class="rlabel">Kétágyas 1 pótággyal - 18000Ft/éj</label>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="content">
+        
+    <div class="bal">
+        <label for="">Vendégek száma:</label>
+        <br>
+        <label for="">Vendégek életkora:</label>
+    </div>
+    <div class="jobb">
+        <input type="number" name="" id="" max="4" min="1" required style="width: 100px;">
+        <br>
+        <div class="eletkorok">
+            <input type="number" name="elet1" id="elet1" style="width: 35px;"min="0">
+            <label for="elet1" class="eletlbl">év</label>
+            <input type="number" name="elet2" id="elet2" style="width: 35px;"min="0">
+            <label for="elet2" class="eletlbl">év</label>
+            <input type="number" name="elet3" id="elet3" style="width: 35px;"min="0">
+            <label for="elet3" class="eletlbl">év</label>
+            <input type="number" name="elet4" id="elet4" style="width: 35px;"min="0">
+            <label for="elet4" class="eletlbl">év</label>
+        </div>
+    </div>
+</div>
+<hr>
+    
+</div>
 
-
-    <script src="./panzio.js"></script>
 </body>
 </html>
