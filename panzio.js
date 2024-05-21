@@ -81,9 +81,9 @@ function ellenorzes()
             eletkor3=Number(document.getElementById("elet3").value);
             eletkor4=Number(document.getElementById("elet4").value);
             keres=document.getElementById("keres").value;
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0)
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum)
             {
-                
+                alert("szius")
             }
     
             

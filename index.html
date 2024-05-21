@@ -38,11 +38,25 @@
         #elet2{float: left;}
         #elet3{float: left;}
         #elet4{float: left;}
+        textarea{ width:30vh}
         .eletlbl{float: left;}
         .cboxok{float: left;}
         @media only screen and (max-width: 1000px) {
             .container{margin-left: 10%;
                         margin-right: 10%;}
+          }
+          @media only screen and (max-width: 700px) {
+            .bal{margin-left: 0px;}
+            textarea{width: 20vh;}
+          }
+          @media only screen and (max-width: 600px) {
+            .content{flex-direction: column;
+                    align-items: center;
+                justify-content: center;}
+            .bal{width: auto;}
+            .jobb{margin-left: 22vh;}
+            textarea{width: 230px;}
+            #vszam{margin-left: 60px;}
           }
     </style>
 </head>
@@ -176,7 +190,7 @@
         
     </div>
     <div class="jobb">
-        <textarea name="keres" id="keres" style="height: 50px; width:30vh"></textarea>
+        <textarea name="keres" id="keres" style="height: 50px;"></textarea>
     </div>
 
 </div>
