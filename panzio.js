@@ -81,13 +81,12 @@ function ellenorzes()
             eletkor3=Number(document.getElementById("elet3").value);
             eletkor4=Number(document.getElementById("elet4").value);
             keres=document.getElementById("keres").value;
-            if(erkdatum.value==undefined || tavdatum.value==undefined)
-                {
-                    alert("")
-                }
-            
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0)
+            {
+                
+            }
     
-
+            
 
 
 }
