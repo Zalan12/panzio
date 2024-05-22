@@ -6,7 +6,15 @@ let eletkor1;
 let eletkor2;
 let eletkor3;
 let eletkor4;
-let furdo=0;
+let cboxert1=0;
+let cboxert2=0;
+let cboxert3=0;
+let cboxert4=0;
+let cboxszov1;
+let cboxszov2;
+let cboxszov3;
+let cboxszov4;
+
 function szoba1()
 {
     szobatipus=9000;
@@ -78,6 +86,8 @@ function elerheto()
  }
 
 
+
+
 function ellenorzes()
 {
 
@@ -94,15 +104,39 @@ function ellenorzes()
 
             if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum)
             {   
+                if(document.getElementById("cbox1").checked==true)
+                    {
+                        cboxert1=800;
+                        cboxszov1="  Beltéri medencék  "
+                    }
+                    if(document.getElementById("cbox2").checked==true)
+                        {
+                            cboxert2=800;
+                            cboxszov2="  Kültéri medencék  "
+                        }
+                        if(document.getElementById("cbox3").checked==true)
+                            {
+                                cboxert3=800;
+                                cboxszov3="  Szauna belépő  "
+                            }
+                            if(document.getElementById("cbox4").checked==true)
+                                {
+                                    cboxert4=2000;
+                                    cboxszov4="  Teljes belépő  "
+                                }
+                    
                 alert("Foglalás felvéve \n Érkezés időpontja: "+erkdatum.getFullYear()+"."+(erkdatum.getMonth()+1)+"."+erkdatum.getDate()+"\n"
                     +"Távozás időpontja: "+tavdatum.getFullYear()+"."+(tavdatum.getMonth()+1)+"."+tavdatum.getDate()+"\n"
                     +"Szoba típusa: "+szobatipusnev+"\n"
                     +"Vendégek száma: "+vendegszam+" fő"+"\n"
                     +"Ellátás: "+ellatasnev+"\n"
-                    +"Egyéb kérés, kívánság: "+keres)
+                    +"Egyéb kérés, kívánság: "+keres+"\n"
+                    +"Össz költség: "+(szobatipus*eltoltottido+cboxert1+cboxert2+cboxert3+cboxert4+ellatas)+"\n"
+                    +"Fürdő szolgáltatások:"+ (cboxszov1,cboxszov2))
             }
             else{
                 alert("Valamit nem/nem jól adtál meg. Ellenőrizd az adatokat, és próbálkozz újra")
+                
             }
 
     
