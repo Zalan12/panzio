@@ -1,5 +1,7 @@
 let szobatipus;
+let szobatipusnev;
 let ellatas;
+let ellatasnev;
 let eletkor1;
 let eletkor2;
 let eletkor3;
@@ -8,30 +10,37 @@ let furdo=0;
 function szoba1()
 {
     szobatipus=9000;
+    szobatipusnev="Egyágyas";
 }
 function szoba2()
 {
     szobatipus=15000;
+    szobatipusnev="Kétágyas";
 }
 function szoba3()
 {
     szobatipus=18000;
+    szobatipusnev="Kétágyas + egy pótágy";
 }
 function szoba4()
 {
     szobatipus=21000;
+    szobatipusnev="Kétágyas + kettő pótágy";
 }
 function ellatas1()
 {
     ellatas=900;
+    ellatasnev="Reggeli";
 }
 function ellatas2()
 {
     ellatas=2900;
+    ellatasnev="Félpanzió";
 }
 function ellatas3()
 {
     ellatas=4900;
+    ellatasnev="Teljes panzió";
 }
 
 
@@ -68,6 +77,7 @@ function elerheto()
         }
  }
 
+
 function ellenorzes()
 {
 
@@ -81,10 +91,20 @@ function ellenorzes()
             eletkor3=Number(document.getElementById("elet3").value);
             eletkor4=Number(document.getElementById("elet4").value);
             keres=document.getElementById("keres").value;
+
             if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum)
-            {
-                alert("szius")
+            {   
+                alert("Foglalás felvéve \n Érkezés időpontja: "+erkdatum.getFullYear()+"."+(erkdatum.getMonth()+1)+"."+erkdatum.getDate()+"\n"
+                    +"Távozás időpontja: "+tavdatum.getFullYear()+"."+(tavdatum.getMonth()+1)+"."+tavdatum.getDate()+"\n"
+                    +"Szoba típusa: "+szobatipusnev+"\n"
+                    +"Vendégek száma: "+vendegszam+" fő"+"\n"
+                    +"Ellátás: "+ellatasnev+"\n"
+                    +"Egyéb kérés, kívánság: "+keres)
             }
+            else{
+                alert("Valamit nem/nem jól adtál meg. Ellenőrizd az adatokat, és próbálkozz újra")
+            }
+
     
             
 
