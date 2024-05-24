@@ -6,14 +6,19 @@ let eletkor1;
 let eletkor2;
 let eletkor3;
 let eletkor4;
+let fiatalkoru1=0;
+let fiatalkoru2=0;
+let fiatalkoru3=0;
+let fiatalkoru4=0;
+let fiatalkoruszam;
 let cboxert1=0;
 let cboxert2=0;
 let cboxert3=0;
 let cboxert4=0;
-let cboxszov1;
-let cboxszov2;
-let cboxszov3;
-let cboxszov4;
+let cboxszov1="";
+let cboxszov2="";
+let cboxszov3="";
+let cboxszov4="";
 
 function szoba1()
 {
@@ -97,32 +102,42 @@ function ellenorzes()
             let eltoltottido=(((+tavdatum)-(+erkdatum))/3600000)/24;
             let vendegszam=Number(document.getElementById("vszam").value);
             eletkor1=Number(document.getElementById("elet1").value);
+            if(eletkor1<16){fiatalkoru1=1;}
+            else{fiatalkoru1=0}
             eletkor2=Number(document.getElementById("elet2").value);
+            if(eletkor2<16){fiatalkoru2=1;}
+            else{fiatalkoru2=0}
             eletkor3=Number(document.getElementById("elet3").value);
+            if(eletkor3<16){fiatalkoru3=1;}
+            else{fiatalkoru3=0}
             eletkor4=Number(document.getElementById("elet4").value);
+            if(eletkor4<16){fiatalkoru4=1;}
+            else{fiatalkoru4=0}
             keres=document.getElementById("keres").value;
+            fiatalkoruszam=fiatalkoru1+fiatalkoru2+fiatalkoru3+fiatalkoru4;
 
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum)
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam>3 && szobatipusnev=="Kétágyas + kettő pótágy"))
             {   
+                
                 if(document.getElementById("cbox1").checked==true)
                     {
                         cboxert1=800;
-                        cboxszov1="  Beltéri medencék  "
+                        cboxszov1=" Beltéri medencék "
                     }
                     if(document.getElementById("cbox2").checked==true)
                         {
                             cboxert2=800;
-                            cboxszov2="  Kültéri medencék  "
+                            cboxszov2=" Kültéri medencék "
                         }
                         if(document.getElementById("cbox3").checked==true)
                             {
                                 cboxert3=800;
-                                cboxszov3="  Szauna belépő  "
+                                cboxszov3=" Szauna belépő "
                             }
                             if(document.getElementById("cbox4").checked==true)
                                 {
                                     cboxert4=2000;
-                                    cboxszov4="  Teljes belépő  "
+                                    cboxszov4=" Teljes belépő "
                                 }
                     
                 alert("Foglalás felvéve \n Érkezés időpontja: "+erkdatum.getFullYear()+"."+(erkdatum.getMonth()+1)+"."+erkdatum.getDate()+"\n"
@@ -132,11 +147,10 @@ function ellenorzes()
                     +"Ellátás: "+ellatasnev+"\n"
                     +"Egyéb kérés, kívánság: "+keres+"\n"
                     +"Össz költség: "+(szobatipus*eltoltottido+cboxert1+cboxert2+cboxert3+cboxert4+ellatas)+"\n"
-                    +"Fürdő szolgáltatások:"+ (cboxszov1,cboxszov2))
+                    +"Fürdő szolgáltatások:"+ cboxszov1+cboxszov2+cboxszov3+cboxszov4)
             }
             else{
-                alert("Valamit nem/nem jól adtál meg. Ellenőrizd az adatokat, és próbálkozz újra")
-                
+                alert("Valamit nem/nem jól adtál meg. Ellenőrizd az adatokat, és próbálkozz újra");
             }
 
     
