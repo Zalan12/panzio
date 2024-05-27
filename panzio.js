@@ -116,7 +116,7 @@ function ellenorzes()
             keres=document.getElementById("keres").value;
             fiatalkoruszam=fiatalkoru1+fiatalkoru2+fiatalkoru3+fiatalkoru4;
 
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam>3 && szobatipusnev=="Kétágyas + kettő pótágy"))
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy"))
             {   
                 
                 if(document.getElementById("cbox1").checked==true)
