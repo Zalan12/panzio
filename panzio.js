@@ -63,8 +63,11 @@ function elerheto()
     if(vendegszam==1)
         {document.getElementById("elet1").disabled=false;
         document.getElementById("elet2").disabled=true;
+        document.getElementById("elet2").value=null;
         document.getElementById("elet3").disabled=true;
+        document.getElementById("elet3").value=null;
         document.getElementById("elet4").disabled=true;
+        document.getElementById("elet4").value=null;
     
         }
     else if(vendegszam==2)
@@ -72,7 +75,9 @@ function elerheto()
         document.getElementById("elet1").disabled=false;
         document.getElementById("elet2").disabled=false;
         document.getElementById("elet3").disabled=true;
+        document.getElementById("elet3").value=null;
         document.getElementById("elet4").disabled=true;
+        document.getElementById("elet4").value=null;
     }
     else if(vendegszam==3)
         {
@@ -80,6 +85,7 @@ function elerheto()
             document.getElementById("elet2").disabled=false;
             document.getElementById("elet3").disabled=false;
             document.getElementById("elet4").disabled=true;
+            document.getElementById("elet4").value=null;
         }
     else if(vendegszam==4)
         {
@@ -89,6 +95,28 @@ function elerheto()
             document.getElementById("elet4").disabled=false;
         }
  }
+ function osszes()
+    {
+        if(document.getElementById("cbox4").checked==true)
+        {
+            cboxert4=2000;
+            cboxszov4=" Teljes belépő "
+            document.getElementById("cbox1").checked=false;
+            document.getElementById("cbox2").checked=false;
+            document.getElementById("cbox3").checked=false;
+            document.getElementById("cbox1").disabled=true;
+            document.getElementById("cbox2").disabled=true;
+            document.getElementById("cbox3").disabled=true;
+
+
+        }
+        else{
+            document.getElementById("cbox1").disabled=false;
+            document.getElementById("cbox2").disabled=false;
+            document.getElementById("cbox3").disabled=false;
+
+        }
+    }
 
 
 
@@ -116,7 +144,7 @@ function ellenorzes()
             keres=document.getElementById("keres").value;
             fiatalkoruszam=fiatalkoru1+fiatalkoru2+fiatalkoru3+fiatalkoru4;
 
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy"))
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy" || fiatalkoruszam<1 && szobatipusnev=="Kétágyas + egy pótágy"))
             {   
                 
                 if(document.getElementById("cbox1").checked==true)
@@ -134,11 +162,7 @@ function ellenorzes()
                                 cboxert3=800;
                                 cboxszov3=" Szauna belépő "
                             }
-                            if(document.getElementById("cbox4").checked==true)
-                                {
-                                    cboxert4=2000;
-                                    cboxszov4=" Teljes belépő "
-                                }
+
                     
                 alert("Foglalás felvéve \n Érkezés időpontja: "+erkdatum.getFullYear()+"."+(erkdatum.getMonth()+1)+"."+erkdatum.getDate()+"\n"
                     +"Távozás időpontja: "+tavdatum.getFullYear()+"."+(tavdatum.getMonth()+1)+"."+tavdatum.getDate()+"\n"
