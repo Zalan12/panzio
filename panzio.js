@@ -144,7 +144,7 @@ function ellenorzes()
             keres=document.getElementById("keres").value;
             fiatalkoruszam=fiatalkoru1+fiatalkoru2+fiatalkoru3+fiatalkoru4;
 
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy" || fiatalkoruszam<1 && szobatipusnev=="Kétágyas + egy pótágy"))
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy")&&!(fiatalkoruszam==4 && szobatipusnev=="Kétágyas + kettő pótágy"))
             {   
                 
                 if(document.getElementById("cbox1").checked==true)
@@ -170,7 +170,7 @@ function ellenorzes()
                     +"Vendégek száma: "+vendegszam+" fő"+"\n"
                     +"Ellátás: "+ellatasnev+"\n"
                     +"Egyéb kérés, kívánság: "+keres+"\n"
-                    +"Össz költség: "+(szobatipus*eltoltottido+cboxert1+cboxert2+cboxert3+cboxert4+ellatas)+"\n"
+                    +"Össz költség: "+(szobatipus*eltoltottido+(cboxert1+cboxert2+cboxert3+cboxert4+ellatas)*vendegszam)+"\n"
                     +"Fürdő szolgáltatások:"+ cboxszov1+cboxszov2+cboxszov3+cboxszov4)
             }
             else{
