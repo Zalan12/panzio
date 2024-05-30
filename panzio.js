@@ -112,6 +112,8 @@ function elerheto()
         }
         else{
             document.getElementById("cbox1").disabled=false;
+            cboxszov4="";
+            cboxert4=0;
             document.getElementById("cbox2").disabled=false;
             document.getElementById("cbox3").disabled=false;
 
@@ -144,7 +146,7 @@ function ellenorzes()
             keres=document.getElementById("keres").value;
             fiatalkoruszam=fiatalkoru1+fiatalkoru2+fiatalkoru3+fiatalkoru4;
 
-            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy")&&!(fiatalkoruszam==4 && szobatipusnev=="Kétágyas + kettő pótágy"))
+            if(ellatas!=undefined && szobatipus!=undefined && vendegszam<=4 && vendegszam>0 && erkdatum!=tavdatum &&!(fiatalkoruszam<2 && szobatipusnev=="Kétágyas + kettő pótágy"))
             {   
                 
                 if(document.getElementById("cbox1").checked==true)
@@ -152,16 +154,33 @@ function ellenorzes()
                         cboxert1=800;
                         cboxszov1=" Beltéri medencék "
                     }
+                else
+                {
+                    cboxert1=0;
+                    cboxszov1="";   
+                }
+
                     if(document.getElementById("cbox2").checked==true)
                         {
                             cboxert2=800;
                             cboxszov2=" Kültéri medencék "
+                        }
+                        else
+                        {
+                            cboxert2=0;
+                            cboxszov2="";   
                         }
                         if(document.getElementById("cbox3").checked==true)
                             {
                                 cboxert3=800;
                                 cboxszov3=" Szauna belépő "
                             }
+                            else
+                            {
+                                cboxert3=0;
+                                cboxszov3="";   
+                            }
+                    
 
                     
                 alert("Foglalás felvéve \n Érkezés időpontja: "+erkdatum.getFullYear()+"."+(erkdatum.getMonth()+1)+"."+erkdatum.getDate()+"\n"
