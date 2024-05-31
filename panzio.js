@@ -189,7 +189,7 @@ function ellenorzes()
                     +"Vendégek száma: "+vendegszam+" fő"+"\n"
                     +"Ellátás: "+ellatasnev+"\n"
                     +"Egyéb kérés, kívánság: "+keres+"\n"
-                    +"Össz költség: "+(szobatipus*eltoltottido+(cboxert1+cboxert2+cboxert3+cboxert4+ellatas)*vendegszam)+"\n"
+                    +"Össz költség: "+(szobatipus*eltoltottido+(cboxert1+cboxert2+cboxert3+cboxert4+ellatas)*vendegszam)+" Ft"+"\n"
                     +"Fürdő szolgáltatások:"+ cboxszov1+cboxszov2+cboxszov3+cboxszov4)
             }
             else{
